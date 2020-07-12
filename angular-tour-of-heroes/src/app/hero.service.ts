@@ -12,7 +12,7 @@ export class HeroService {
   /**
    * Metodos
    */
-  constructor(private messageService: MessageService) { 
+  constructor(private messageService: MessageService) {
 
   }
 
