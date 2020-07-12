@@ -18,13 +18,11 @@ export class HeroesComponent implements OnInit {
 
   /**
    * Add a private heroService parameter of type HeroService to the constructor.
+   * The parameter simultaneously defines a private heroService property and identifies it as a HeroService injection site.
    * 
    * @param heroService 
    */
-  constructor(
-    private heroService: HeroService, private messageService: MessageService ) {
-      
-    }
+  constructor( private heroService: HeroService, private messageService: MessageService ) {}
 
   /**
    * Call it in ngOnInit()
@@ -39,6 +37,7 @@ export class HeroesComponent implements OnInit {
 
   /**
    * Metodos
+   * 
    * @param hero 
    */
   onSelect(hero: Hero): void {
