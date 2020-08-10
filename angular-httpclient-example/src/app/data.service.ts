@@ -28,6 +28,11 @@ export class DataService {
   constructor(private httpClient: HttpClient) { }
 
   /**
+   * By default, HttpClient does only provide the response body 
+   * but in our case we need to parse the Link header for pagination 
+   * links so we need to tell HttpClient that we want the full 
+   * HttpResponse using the observe option.
+   * 
    * define the parseLinkHeader() method which parses the Link 
    * header and populate the previous variables accordingly
    * @param header 
@@ -75,7 +80,6 @@ export class DataService {
     }).pipe(retry(3), catchError(this.handleError), tap(res => {
       console.log(res.headers.get('Link'));
       this.parseLinkHeader(res.headers.get('Link'));
-
     }));
     
   }
