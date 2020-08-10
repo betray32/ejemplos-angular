@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "angular-httpclient-example"
+  "defaultProject": "angular-httpclient-example",
+  "cli": {
+    "analytics": false
+  }
 }
