@@ -31,7 +31,8 @@ export class HomeComponent implements OnInit {
      * The takeUntil() operator emits the values emitted by the source 
      * Observable until a notifier Observable emits a value.
      */
-     this.dataService.sendGetRequest().pipe(takeUntil(this.destroy$)).subscribe((res: HttpResponse<Product[]>) => {
+     this.dataService.sendGetRequest().pipe(takeUntil(this.destroy$))
+     .subscribe((res: HttpResponse<Product[]>) => {
       console.log(res);
       this.products = res.body;
     })
