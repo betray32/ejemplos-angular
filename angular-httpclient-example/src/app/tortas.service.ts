@@ -8,7 +8,9 @@ import { throwError } from 'rxjs';
 import { retry, catchError, tap  } from 'rxjs/operators';
 
 import { Torta } from './torta';
-import { Observable } from 'rxjs';
+
+import { Product } from './product';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +20,8 @@ export class TortasService {
   /**
    * Endpoint
    */
-  private REST_API_SERVER = "localhost:8080/Tortas/ObtenerTortas";
+  //private REST_API_SERVER = "localhost:8080/Tortas/ObtenerTortas";
+  private REST_API_SERVER = "http://localhost:3000/products";
 
   /**
    * Constructor
@@ -27,7 +30,7 @@ export class TortasService {
   constructor(private httpClient: HttpClient) { }
 
   public sendGetRequest(){
-    return this.httpClient.get(this.REST_API_SERVER);
+    return this.httpClient.get(this.REST_API_SERVER).pipe(retry(3), catchError(this.handleError));
   }
 
   /** MANEJO DE ERRORES */

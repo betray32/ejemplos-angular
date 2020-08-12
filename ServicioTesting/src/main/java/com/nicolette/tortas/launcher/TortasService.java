@@ -16,11 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class TortasService {
 
 	@GetMapping("/ObtenerTortas")
-	public SalidaTortas obtenerTodas() {
+	public List<TortaBean> obtenerTodas() {
 		
 		System.out.println("Solicitud ingresada!");
 
-		SalidaTortas salida = new SalidaTortas();
 		List<TortaBean> lista = new ArrayList<>();
 
 		TortaBean dummy = new TortaBean();
@@ -36,8 +35,7 @@ public class TortasService {
 		lista.add(dummy1);
 		lista.add(dummy);
 
-		salida.setTortas(lista);
-		return salida;
+		return lista;
 
 	}
 
