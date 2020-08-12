@@ -12,7 +12,7 @@ import { Torta } from '../torta';
 })
 export class ListadoComponent implements OnInit {
 
-  tortas: Torta[] = [];
+  tortas = [];
 
   /**
    * Next, we created an instance of Subject which can emit boolean values 
@@ -25,17 +25,10 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit() {
 
-    /**
-     * There is also a better way to unsubscribe from or complete Observables by using the takeUntil() operator.
-     * 
-     * The takeUntil() operator emits the values emitted by the source 
-     * Observable until a notifier Observable emits a value.
-     */
-     this.dataService.sendGetRequest().pipe(takeUntil(this.destroy$))
-     .subscribe( data => {
-       console.log(data)
-       this.tortas = data;
-     })
+    this.dataService.sendGetRequest().subscribe((data: any[])=>{
+      console.log(data);
+      this.tortas = data;
+    })
   }
 
   /**
