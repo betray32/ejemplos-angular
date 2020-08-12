@@ -26,13 +26,11 @@ export class TortasService {
    */
   constructor(private httpClient: HttpClient) { }
 
-  public sendPostRequest() : Observable<Torta[]> {
+  public sendGetRequest() : Observable<Torta[]> {
 
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify("person");
-    return this.httpClient.post < Torta[] > (this.REST_API_SERVER,  {
-        "categoria": "test"
-      })
+    return this.httpClient.get<Torta[]>(this.REST_API_SERVER)
       .pipe(retry(3), catchError(this.handleError));
   }
 

@@ -31,7 +31,7 @@ export class ListadoComponent implements OnInit {
      * The takeUntil() operator emits the values emitted by the source 
      * Observable until a notifier Observable emits a value.
      */
-     this.dataService.sendPostRequest().pipe(takeUntil(this.destroy$))
+     this.dataService.sendGetRequest().pipe(takeUntil(this.destroy$))
      .subscribe( data => {
        console.log(data)
        this.tortas = data;
