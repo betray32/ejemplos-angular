@@ -17,7 +17,7 @@ public class TortasService {
 
 	@GetMapping("/ObtenerTortas")
 	public List<TortaBean> obtenerTodas() {
-		
+
 		System.out.println("Solicitud ingresada!");
 
 		List<TortaBean> lista = new ArrayList<>();
