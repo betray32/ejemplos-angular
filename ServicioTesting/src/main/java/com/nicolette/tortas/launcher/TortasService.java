@@ -27,13 +27,13 @@ public class TortasService {
 
 		TortaBean dummy = new TortaBean();
 		dummy.setId(11);
-		dummy.setDescripcion("Torta Tres Leches");
-		dummy.setNombre("Tres Delicias");
+		dummy.setName("Torta Tres Leches");
+		dummy.setDescription("Tres Delicias");
 
 		TortaBean dummy1 = new TortaBean();
 		dummy1.setId(12);
-		dummy1.setDescripcion("Mil Horas de Amor");
-		dummy1.setNombre("Mil Hojas Veg");
+		dummy1.setName("Mil Horas de Amor");
+		dummy1.setDescription("Mil Hojas Veg");
 
 		lista.add(dummy1);
 		lista.add(dummy);
