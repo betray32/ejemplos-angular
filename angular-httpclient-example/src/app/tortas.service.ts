@@ -20,7 +20,7 @@ export class TortasService {
   /**
    * Endpoint
    */
-  private REST_API_SERVER = "localhost:8080/Tortas/ObtenerTortas";
+  private REST_API_SERVER = "http://localhost:8080/Tortas/ObtenerTortas";
   //private REST_API_SERVER = "http://localhost:3000/products";
 
   /**

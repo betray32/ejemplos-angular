@@ -13,6 +13,7 @@ import java.util.List;
  * @author yharnam
  */
 @RestController
+@CrossOrigin(origins="http://localhost:4200")
 public class TortasService {
 
     @GetMapping("/ObtenerTortas")
